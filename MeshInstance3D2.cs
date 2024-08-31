@@ -23,11 +23,9 @@ public partial class MeshInstance3D2 : MeshInstance3D
 		// Look at mouse position
 		pos = ScreenPointToRay();
 		pos.Y = 0;
-		sprite.LookAt(pos, Vector3.Up, true);
 
 		var mid = Position.Lerp(pos, 0.5f);
-		cam.Position = new Vector3(mid.X, 70, mid.Z);
-		BG.Position = new Vector3(Position.X, 30, Position.Z);
+		sprite.Position = new Vector3(MathF.Round(pos.X), 0, MathF.Round(pos.Z));
 	}
 
 	// Raycast
